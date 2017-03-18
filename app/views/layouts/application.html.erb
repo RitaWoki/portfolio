@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+     <%= link_to "HOME",root_path %>
+     <%= link_to "ABOUT",welcome_about_path %>
+     <%= link_to "PROJECTS",welcome_projects_path %>
+     <%= link_to "RESUME",welcome_resume_path %>
+     <%= link_to "CONTACT",welcome_contact_path %>
+
+    <%= yield %>
+  </body>
+</html>
