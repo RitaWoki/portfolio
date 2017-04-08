@@ -4,10 +4,10 @@
     <h4>Here are the projects for this skill:</h4>
 
     <ul>
-      <% @skill.projects.each do |task| %>
+      <% @skill.projects.each do |project| %>
         <li>
           <%= project.description %> |
-          <%= link_to "Edit", edit_skill_task_path(@skill, task) %> |
+          <%= link_to "Edit", edit_skill_project_path(@skill, project) %> |
           <%= link_to "Delete", skill_project_path(@skill, project),
                                    :data => {:confirm => "Are you sure?",
                                                   :method => "delete"} %>

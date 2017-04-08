@@ -1,0 +1,5 @@
+<%= form_for [@post, @comment],do |f| %>
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+    <p><%= f.submit :class => "btn btn-primary" %></p>
+  <% end %>

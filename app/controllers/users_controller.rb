@@ -1,22 +1,23 @@
 class UsersController < ApplicationController
-def new
+def show
+	@user = user.find(params[:id])
+end
 
+def new
+ @user = User.new
   end
+
 def create
 
 @user = User.new(user_params)
 
 if @user.save
-
-flash[:notice] = "Welcome to the site!"
-
-redirect_to "/"
-
+	UserMailer.signup_confirmation(@user).deliver
+    # flash[:notice] = "Welcome to the site!"
+   redirect_to "@user,notice: "signed up successfully"
 else
-
-flash[:alert] = "There was a problem creating your account. Please try again."
-
-redirect_to :back
+  flash[:alert] = "There was a problem creating your account. Please try again."
+  redirect_to :back
 
 end
 
