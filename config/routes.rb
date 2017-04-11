@@ -23,9 +23,9 @@ Rails.application.routes.draw do
     resources :subprojects
   end
 
-  resources :posts
-
-  resources :comments
+  resources :posts do 
+    resources :comments
+  end
 
    get 'welcome/index'
 

@@ -2,13 +2,17 @@
 
  <h1>Posts</h1>
 
-  <ul>
+  <ul class="Listdecorations">
     <% @posts.each do |post| %>
-      <li><%= link_to post.title, post_path(post) %></li>
+    <div class="container panel panelcentre">
+    <div class="panel panel-default">
+      <div class="panel-heading"><li><%= link_to post.title, post_path(post) %></li>
+      </div>
     <% end %>
   </ul>
 
    <hr>
 
-  <%= link_to "New post", new_post_path %>
+  <a class="btn btn-primay"><%= link_to "New post", new_post_path %></a>
+  </div>
   

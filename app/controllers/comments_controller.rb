@@ -19,14 +19,14 @@ class CommentsController < ApplicationController
     end
 
      def edit
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
     end
 
     def update
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:post_id])
       @comment = Comment.find(params[:id])
-      if @comment.update(project_params)
+      if @comment.update(comment_params)
         flash[:notice] = "Comment updated!"
         redirect_to posts_path(@comment.post)
       else
@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:project).permit(:description)
+      params.require(:comment).permit(:text)
     end
 end
 
